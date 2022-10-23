@@ -1,4 +1,4 @@
-import { getTrendingMovies } from "api";
+// import { getTrendingMovies } from "api";
 
  
 

@@ -1,12 +1,12 @@
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "pages/Home"
 import Movies from "pages/Movies"
 import Cast from "pages/Cast"
 import MovieDetails from "pages/MovieDetails"
 import Reviews from "pages/Reviews"
 import { Link, Wrap } from "./App.styled";
-import { useEffect, useState } from "react";
-import { getMovies } from "api";
+// import { useEffect, useState } from "react";
+// import { getMovies } from "api";
 
 export const App = () => {
 
