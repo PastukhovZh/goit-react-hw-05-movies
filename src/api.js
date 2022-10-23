@@ -8,7 +8,7 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
 export const getMovies = async (search) => {
     const response= await axios.get(
-    `/search/company?api_key=${process.env.REACT_APP_API_KEY}&external_source=imdb_id&query=${search}`)
+    `/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${search}`)
   return response.data
 
 }
