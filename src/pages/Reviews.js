@@ -1,24 +1,10 @@
-import { getMovieReviews } from "api"
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import ReviewsMovies from "components/ReviewsMovies/ReviewsMovies"
+
 
 const Reviews = () => {
-    const { id } = useParams()
-    const [reviews, setReviews] = useState([])
-
-    useEffect(() => {
-getMovieReviews(id).then(res => {
-    if (id !== undefined) {
-     return setReviews(res.results)
-   }
- } )
-
-    }, [id])
-    return (
-        <div>
-            {reviews.map(review => console.log(review))}
-        </div>
-    )
+    return (<div>
+    <ReviewsMovies/>
+</div>)
 }
 
 export default Reviews

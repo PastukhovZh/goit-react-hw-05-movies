@@ -1,12 +1,9 @@
-// import { getTrendingMovies } from "api";
-
+import HomePage from "components/HomePage/HomePage";
  
 
 const Home = () => {
-  return (
-      <div>
-          This is homepage
-</div>
-  );
+  return(<div><HomePage/></div>)
+
+
 };
 export default Home

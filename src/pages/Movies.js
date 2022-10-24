@@ -3,20 +3,6 @@ import MovieList from "components/MoviesList/MoviesList"
 import Searchbar from "components/Searchbar/Searchbar"
 import { useState } from "react"
 import { Outlet } from "react-router-dom"
-// import { toast } from "react-toastify"
-
-
-// const Movies = () => {
-//     const movies = getMovies(movies)
-//     return (
-//         <div>
-//            
-//         </div>
-//     )
-// }
-
-// export default Movies
-
 
 
 const Movies = () => {
