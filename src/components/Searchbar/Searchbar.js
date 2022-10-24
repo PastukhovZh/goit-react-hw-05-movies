@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
 import { Input, SearchForm } from "./Searchbar.styled";
 
 const Searchbar = ({onSubmit}) => {

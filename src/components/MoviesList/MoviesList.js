@@ -1,4 +1,3 @@
-import Movies from "pages/Movies";
 import { Link } from "react-router-dom";
 import { ListMovie, MoviesWrap } from "./MoviesList.styled";
 
