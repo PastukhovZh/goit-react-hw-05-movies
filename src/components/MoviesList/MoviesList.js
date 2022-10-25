@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { ListMovie, MoviesWrap } from "./MoviesList.styled";
+import PropTypes from "prop-types"
+
+
 
 
 const MovieList = ({ movies }) => {
@@ -29,5 +32,17 @@ console.log(movies)
     )
 }
 
+
+
+
+MoviesWrap.propTypes = {
+    trendingMovies: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            release_date: PropTypes.string,
+        })
+    )
+}
 
 export default MovieList

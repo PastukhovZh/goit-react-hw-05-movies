@@ -10,7 +10,7 @@ border-radius:4px;
   color: black;
       font-weight: 500;
       background-color: transparent;
-  &:focus {
+  &:hover {
       font-weight: 500;
     color: white;
     background-color: orangered;

@@ -1,4 +1,7 @@
 import { HomeWrap, Link, ListMovie } from "./HomePage.styled"
+import PropTypes from "prop-types"
+
+
 
 const { getTrendingMovies } = require("api")
 const { useState, useEffect } = require("react")
@@ -11,7 +14,6 @@ const homePicture = {
    }
   useEffect(() => {
     getTrendingMovies().then(res => {
-      // console.log(res.results)
   setTrendingMovies(res.results)
 })
   }, [])
@@ -30,13 +32,24 @@ const homePicture = {
             <p>Vote average: {vote_average}</p>
             </Link>
           </ListMovie>
-          // console.log(movie.title)
         ))}
       </HomeWrap>
     </main>
   );
 }
 
+
+
+HomeWrap.propTypes = {
+    trendingMovies: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            release_date: PropTypes.string,
+            vote_average: PropTypes.string,
+        })
+    )
+}
 export default HomePage
 
 
