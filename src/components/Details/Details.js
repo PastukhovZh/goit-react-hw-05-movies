@@ -1,6 +1,6 @@
 import { getMoviesDetails } from "api"
-import { useEffect, useState } from "react"
-import { Outlet, useParams } from "react-router-dom"
+import { Suspense, useEffect, useState } from "react"
+import { Outlet, useLocation, useParams } from "react-router-dom"
 import { GoBackLink, Link, Wrap, HeaderWrap, InfoWrap, Wrapper } from "./Details.styled"
 import PropTypes from "prop-types"
 
@@ -16,19 +16,20 @@ const Details = () => {
       base_url:'https://image.tmdb.org/t/p/',
    size:'w500',
    picture:movie.poster_path,
-   }
-  
+  }
+
+  const location = useLocation();
+  const goBackLink = location.state?.from?? '../../components/Movies';
+
 useEffect(() => {
   getMoviesDetails(id).then(res =>setMovie(res) )
-  // getMoviesDetails(id).then(res =>console.log(res) )
-
 }, [id])
 
   
 
   return (
     <Wrapper>
-      <GoBackLink to={`/movies`}>
+      <GoBackLink to={goBackLink}>
           Go back
         </GoBackLink>
       <Wrap>
@@ -52,7 +53,9 @@ useEffect(() => {
       </Wrap>
       <Link to='cast' >Cast</Link>
       <Link to='reviews'>Reviews</Link>
-      <Outlet/>
+      <Suspense fallback={<div>Loading page...</div>}>
+        <Outlet />
+        </Suspense>
       </Wrapper>
     )
 }

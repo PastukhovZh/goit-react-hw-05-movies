@@ -11,9 +11,9 @@ const Movies = () => {
 
 
     const  handleSubmit  = async e => {
-        const result = await getMovies(e).then(res => res.results)
+return await getMovies(e).then(res => setMovies(res.results))
         // console.log(result)
-        return setMovies(result)
+
 }
     
 

@@ -27,7 +27,7 @@ useEffect(() => {
       return (
         <Actor key={id}>
             
-              <img alt="" height={450} width={300} src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs=" />
+              <img alt={name } height={450} width={300} src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs=" />
               <h3>{name}</h3>
         </Actor>)
   }
