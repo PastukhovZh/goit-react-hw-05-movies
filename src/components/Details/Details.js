@@ -19,7 +19,7 @@ const Details = () => {
   }
 
   const location = useLocation();
-  const goBackLink = location.state?.from?? '/Movies';
+  const goBackLink = location.state?.from??`/Movies`;
 
 useEffect(() => {
   getMoviesDetails(id).then(res =>setMovie(res) )

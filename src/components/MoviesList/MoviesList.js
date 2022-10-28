@@ -19,6 +19,7 @@ const MovieList = ({ movies }) => {
                 {
                     if (poster_path === null) {
                         return (
+                            <ListMovie key={id}>
                         <Link to={`${id}`} state={{ from: location }}><img alt={title} height={450} width={300} src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs=" />
                                 <h3>
                                     {title}
@@ -26,7 +27,7 @@ const MovieList = ({ movies }) => {
                                 <p>Release date: {release_date}</p>
                                 <p>Vote average: {vote_average}</p>
                             </Link>
-                            
+                            </ListMovie>
                             )
                         
                 }
