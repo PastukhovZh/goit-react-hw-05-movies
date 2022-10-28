@@ -19,7 +19,7 @@ const Details = () => {
   }
 
   const location = useLocation();
-  const goBackLink = location.state?.from?? '../../components/Movies';
+  const goBackLink = location.state?.from?? '/Movies';
 
 useEffect(() => {
   getMoviesDetails(id).then(res =>setMovie(res) )
@@ -51,8 +51,8 @@ useEffect(() => {
             
         
       </Wrap>
-      <Link to='cast' >Cast</Link>
-      <Link to='reviews'>Reviews</Link>
+      <Link to='cast' state={{ from: location }} >Cast</Link>
+      <Link to='reviews'state={{ from: location }} >Reviews</Link>
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
         </Suspense>
