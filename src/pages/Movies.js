@@ -10,7 +10,8 @@ const Movies = () => {
 
 
 
-    const  handleSubmit  = async e => {
+    const handleInput = async e => {
+
 return await getMovies(e).then(res => setMovies(res.results))
         // console.log(result)
 
@@ -21,7 +22,7 @@ return await getMovies(e).then(res => setMovies(res.results))
 
     return (
         <div>
-            <Searchbar onSubmit={handleSubmit}></Searchbar>
+            <Searchbar onSubmit={handleInput}></Searchbar>
             <MovieList movies={movies}/>
             <Outlet/>
         </div>

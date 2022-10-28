@@ -1,6 +1,7 @@
 
+
 import { useSearchParams } from "react-router-dom";
-import { Input, SearchForm } from "./Searchbar.styled";
+import { Input } from "./Searchbar.styled";
 
 // const Searchbar = ({onSubmit}) => {
 //     const [search, setSearch] = useState('')
@@ -29,21 +30,21 @@ const Searchbar = ({onSubmit}) => {
     const [searchParam, setSearchParam] = useSearchParams()
     const query= searchParam.get("query")
     
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        return onSubmit(query)
+    if (query !=='') {
+    onSubmit(query)
+} 
 
     
-    //     setSearch('')
-        // console.log(search)
-  }
+    const handleInput = e => {
+        onSubmit(query)
+        setSearchParam({ query: e.target.value })
+    }
 
 
-    return (<SearchForm onSubmit={handleSubmit}>
-                <button type="submit"> <span>Find Movie</span> </button>
-      <Input type="text" onChange={e => setSearchParam({ query: e.target.value })} value={ query } />
-            </SearchForm>)
+
+    return (
+      <Input type="text" onChange={handleInput} value={ query } />
+            )
 }
 
 

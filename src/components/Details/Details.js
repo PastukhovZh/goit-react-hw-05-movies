@@ -51,8 +51,8 @@ useEffect(() => {
             
         
       </Wrap>
-      <Link to='cast' state={{ from: location }} >Cast</Link>
-      <Link to='reviews'state={{ from: location }} >Reviews</Link>
+      <Link to='cast' state={location.state} >Cast</Link>
+      <Link to='reviews'state={location.state} >Reviews</Link>
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
         </Suspense>
